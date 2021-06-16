@@ -1,0 +1,16 @@
+.home-page {
+  padding: 2rem 4rem;
+}
+
+.home-page__countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .home-page {
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,43 @@
+.country-item {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.country-item__image {
+  height: 150px;
+}
+
+.country-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.country-item__info {
+  padding: 1.5rem;
+}
+
+.country-item__name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+}
+
+.country-item__text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.country-item__text:not(:last-child) {
+  margin-bottom: 0.2em;
+}
+
+.country-item__text span {
+  font-weight: 600;
+}

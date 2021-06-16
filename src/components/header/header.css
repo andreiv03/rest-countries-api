@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  z-index: 1;
+  position: relative;
+}
+
+.header__title a {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header__theme-button {
+  cursor: pointer;
+  display: flex;
+}
+
+.header__theme-button__icon {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.header__theme-button__text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 0.75em;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 2rem;
+  }
+
+  .header__title a {
+    font-size: 1rem;
+  }
+}
