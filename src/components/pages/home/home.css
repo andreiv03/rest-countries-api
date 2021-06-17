@@ -1,5 +1,6 @@
 .home-page {
   padding: 2rem 4rem;
+  min-height: calc(100vh - 70px);
 }
 
 .home-page__countries {

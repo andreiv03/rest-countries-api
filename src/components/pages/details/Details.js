@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 import { ThemeContext } from "../../../contexts/ThemeContext.js";
 
@@ -46,14 +47,15 @@ export default function Details() {
 
   return (
     <div className="details-page" style={{ background: themes[theme].background }}>
-      <div
+      <motion.div
         className="details-page__back-button" 
         onClick={handleClickBackButton}
         style={{ background: themes[theme].elements, color: themes[theme].foreground, boxShadow: themes[theme].boxShadow }}
+        whileTap={{ scale: 0.9 }}
       >
         <RiArrowLeftLine />
         <span>Back</span>
-      </div>
+      </motion.div>
 
       <div className="details-page__country">
         <div className="details-page__image">
@@ -109,12 +111,15 @@ export default function Details() {
             <div className="details-page__border-countries">
               {
                 borders && borders.map(borderCountry => (
-                  <div
+                  <motion.div
                     key={borderCountry.name}
                     className="details-page__border-country"
                     onClick={() => handleClickBorderCountry(borderCountry.code)}
                     style={{ background: themes[theme].elements, boxShadow: themes[theme].boxShadow }}
-                  >{borderCountry.name}</div>
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {borderCountry.name}
+                  </motion.div>
                 ))
               }
             </div>

@@ -40,6 +40,7 @@ select {
 /* Home page */
 @import url("./components/pages/home/home.css");
 @import url("./components/pages/home/utils/utils.css");
+@import url("./components/pages/home/utils/select-dropdown/select-dropdown.css");
 @import url("./components/pages/home/country-item/country-item.css");
 
 /* Details page */

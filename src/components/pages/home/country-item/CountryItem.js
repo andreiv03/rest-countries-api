@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import { ThemeContext } from "../../../../contexts/ThemeContext.js";
 
@@ -12,7 +13,11 @@ export default function CountryItem({ country }) {
   const handleClick = () => history.push(`/${country.alpha2Code}`);
 
   return (
-    <div className="country-item" onClick={handleClick} style={{ background: themes[theme].elements, color: themes[theme].foreground, boxShadow: themes[theme].boxShadow }}>
+    <motion.div className="country-item" onClick={handleClick}
+      style={{ background: themes[theme].elements, color: themes[theme].foreground, boxShadow: themes[theme].boxShadow }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
       <div className="country-item__image">
         <img src={country.flag} alt="The country's flag" />
       </div>
@@ -32,6 +37,6 @@ export default function CountryItem({ country }) {
           country.capital && <h3 className="country-item__text"><span>Capital: </span>{country.capital}</h3>
         }
       </div>
-    </div>
+    </motion.div>
   );
 }

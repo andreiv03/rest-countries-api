@@ -1,13 +1,13 @@
 .details-page {
   padding: 2rem 4rem;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 
 .details-page__back-button {
   display: flex;
   align-items: center;
-  padding: 0.7rem 2rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
   font-weight: 600;
   width: fit-content;
   cursor: pointer;

@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { RiSearchLine, RiArrowDropDownLine } from "react-icons/ri";
+import { RiSearchLine } from "react-icons/ri";
 
 import { ThemeContext } from "../../../../contexts/ThemeContext.js";
 import { CountriesContext } from "../../../../contexts/CountriesContext.js";
+import SelectDropdown from "./select-dropdown/SelectDropdown.js";
 
 export default function Utils() {
   const themeContext = useContext(ThemeContext);
@@ -13,10 +14,7 @@ export default function Utils() {
   const [search, setSearch] = countriesContext.search;
   const [filter, setFilter] = countriesContext.filter;
 
-  const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
-
   const handleChangeTextInput = event => setSearch(event.target.value);
-  const handleChangeSelectInput = event => setFilter(event.target.value);
 
   return (
     <div className="utils">
@@ -30,23 +28,7 @@ export default function Utils() {
         </div>
       </div>
 
-      <div className="utils__filters">
-        <select name="filter" value={filter} onChange={handleChangeSelectInput}
-          style={{ background: themes[theme].elements, color: themes[theme].foreground, boxShadow: themes[theme].boxShadow }}
-        >
-          <option value="">Filter by region</option>
-
-          {
-            continents.map(continent => (
-              <option key={continent} value={continent}>{continent}</option>
-            ))
-          }
-        </select>
-
-        <div className="utils__filters-arrow" style={{ color: themes[theme].foreground }}>
-          <RiArrowDropDownLine />
-        </div>
-      </div>
+      <SelectDropdown filter={filter} setFilter={setFilter} theme={theme} themes={themes} />
     </div>
   );
 }
