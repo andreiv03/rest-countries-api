@@ -1,15 +1,18 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
-import axios from "axios";
 import { motion } from "framer-motion";
 
 import { ThemeContext } from "../../../contexts/ThemeContext.js";
+import { CountriesContext } from "../../../contexts/CountriesContext.js";
 
 export default function Details() {
   const themeContext = useContext(ThemeContext);
   const [theme] = themeContext.theme;
   const [themes] = themeContext.themes;
+
+  const countriesContext = useContext(CountriesContext);
+  const [allCountries] = countriesContext.allCountries;
 
   const { code } = useParams();
   const [country, setCountry] = useState({});
@@ -18,13 +21,12 @@ export default function Details() {
   useEffect(() => {
     const getCountry = async () => {
       try {
-        const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`);
+        const foundCountry = allCountries.find(country => country.alpha2Code === code);
 
-        if (res.data.borders.length) {
-          const borderCountriesCodes = res.data.borders.join(";");
-          const response = await axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${borderCountriesCodes}`);
+        if (foundCountry?.borders.length) {
+          const foundBorders = allCountries.filter(country => foundCountry.borders.includes(country.alpha3Code));
 
-          setBorders(response.data.map(borderCountry => { 
+          setBorders(foundBorders.map(borderCountry => { 
             return {
               name: borderCountry.name,
               code: borderCountry.alpha2Code
@@ -32,18 +34,20 @@ export default function Details() {
           }));
         }
 
-        setCountry(res.data);
+        setCountry(foundCountry);
       } catch (error) {
         return alert(error);
       }
     }
 
     getCountry();
-  }, [code]);
+  }, [allCountries, code]);
 
   const history = useHistory();
   const handleClickBackButton = () => history.push("/");
   const handleClickBorderCountry = code => history.push(`/${code}`);
+
+  if (!country) return null;
 
   return (
     <div className="details-page" style={{ background: themes[theme].background }}>

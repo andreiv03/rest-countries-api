@@ -42,6 +42,7 @@ select {
 @import url("./components/pages/home/utils/utils.css");
 @import url("./components/pages/home/utils/select-dropdown/select-dropdown.css");
 @import url("./components/pages/home/country-item/country-item.css");
+@import url("./components/pages/home/utils/loader/loader.css");
 
 /* Details page */
 @import url("./components/pages/details/details.css");
