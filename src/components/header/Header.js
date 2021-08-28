@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { RiMoonFill, RiSunFill } from "react-icons/ri";
 
+import "./header.css";
 import { ThemeContext } from "../../contexts/ThemeContext.js";
 
 export default function Header() {

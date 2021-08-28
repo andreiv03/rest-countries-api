@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
 
+import "./select-dropdown.css";
+
+const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+
 const optionsVariants = {
   initial: {
     height: 0
   },
   animate: {
-    height: "auto"
+    height: "auto",
+    transition: {
+      duration: 0.2,
+      stiffness: 0
+    }
   },
   exit: {
     height: 0,
     transition: {
-      duration: 0.3
+      duration: 0.2
     }
   }
 }
 
 export default function SelectDropdown({ filter, setFilter, theme, themes }) {
   const [isActive, setIsActive] = useState(false);
-
-  const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   const handleChangeSelectInput = continent => {
     if (filter !== continent) setFilter(continent);

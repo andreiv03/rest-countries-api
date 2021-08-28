@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { ThemeContext } from "../../../../contexts/ThemeContext.js";
+import "./country-item.css";
+import { ThemeContext } from "../../contexts/ThemeContext.js";
 
 export default function CountryItem({ country }) {
   const themeContext = useContext(ThemeContext);

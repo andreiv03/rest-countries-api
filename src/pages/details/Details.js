@@ -3,8 +3,9 @@ import { useParams, useHistory } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 
-import { ThemeContext } from "../../../contexts/ThemeContext.js";
-import { CountriesContext } from "../../../contexts/CountriesContext.js";
+import "./details.css";
+import { ThemeContext } from "../../contexts/ThemeContext.js";
+import { CountriesContext } from "../../contexts/CountriesContext.js";
 
 export default function Details() {
   const themeContext = useContext(ThemeContext);
@@ -71,46 +72,22 @@ export default function Details() {
 
           <div className="details-page__row">
             <div className="details-page__column" style={{ color: themes[theme].foreground }}>
-              {
-                country.nativeName && <h3 className="details-page__column-text"><span>Native Name: </span>{country.nativeName}</h3>
-              }
-
-              {
-                country.population && <h3 className="details-page__column-text"><span>Population: </span>{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
-              }
-
-              {
-                country.region && <h3 className="details-page__column-text"><span>Region: </span>{country.region}</h3>
-              }
-
-              {
-                country.subregion && <h3 className="details-page__column-text"><span>Sub Region: </span>{country.subregion}</h3>
-              }
-
-              {
-                country.capital && <h3 className="details-page__column-text"><span>Capital: </span>{country.capital}</h3>
-              }
+              {country.nativeName && <h3 className="details-page__column-text"><span>Native Name: </span>{country.nativeName}</h3>}
+              {country.population && <h3 className="details-page__column-text"><span>Population: </span>{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>}
+              {country.region && <h3 className="details-page__column-text"><span>Region: </span>{country.region}</h3>}
+              {country.subregion && <h3 className="details-page__column-text"><span>Sub Region: </span>{country.subregion}</h3>}
+              {country.capital && <h3 className="details-page__column-text"><span>Capital: </span>{country.capital}</h3>}
             </div>
 
             <div className="details-page__column" style={{ color: themes[theme].foreground }}>
-              {
-                country.topLevelDomain && <h3 className="details-page__column-text"><span>Top Level Domain: </span>{country.topLevelDomain[0]}</h3>
-              }
-
-              {
-                country.currencies && <h3 className="details-page__column-text"><span>Currencies: </span>{country.currencies.map(currency => currency.name).join(", ")}</h3>
-              }
-
-              {
-                country.languages && <h3 className="details-page__column-text"><span>Languages: </span>{country.languages.map(language => language.name).join(", ")}</h3>
-              } 
+              {country.topLevelDomain && <h3 className="details-page__column-text"><span>Top Level Domain: </span>{country.topLevelDomain[0]}</h3>}
+              {country.currencies && <h3 className="details-page__column-text"><span>Currencies: </span>{country.currencies.map(currency => currency.name).join(", ")}</h3>}
+              {country.languages && <h3 className="details-page__column-text"><span>Languages: </span>{country.languages.map(language => language.name).join(", ")}</h3>} 
             </div>
           </div>
 
           <div className="details-page__row" style={{ color: themes[theme].foreground }}>
-            {
-              borders.length > 0 && <h3 className="details-page__border-countries__text">Border Countries:</h3>              
-            }
+            {borders.length > 0 && <h3 className="details-page__border-countries__text">Border Countries:</h3>}
 
             <div className="details-page__border-countries">
               {

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
-import { ThemeContext } from "../../../../contexts/ThemeContext.js";
-import { CountriesContext } from "../../../../contexts/CountriesContext.js";
+import "./utils.css";
+import { ThemeContext } from "../../contexts/ThemeContext.js";
+import { CountriesContext } from "../../contexts/CountriesContext.js";
+
 import SelectDropdown from "./select-dropdown/SelectDropdown.js";
 
 export default function Utils() {

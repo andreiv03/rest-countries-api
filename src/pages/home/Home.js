@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 
-import { ThemeContext } from "../../../contexts/ThemeContext.js";
-import { CountriesContext } from "../../../contexts/CountriesContext.js";
-import Utils from "./utils/Utils.js";
-import CountryItem from "./country-item/CountryItem.js";
-import Loader from "./utils/loader/Loader.js";
+import "./home.css";
+import { ThemeContext } from "../../contexts/ThemeContext.js";
+import { CountriesContext } from "../../contexts/CountriesContext.js";
+
+import Utils from "../../components/utils/Utils.js";
+import CountryItem from "../../components/country-item/CountryItem.js";
+import Loader from "../../components/utils/loader/Loader.js";
 
 export default function Home() {
   const themeContext = useContext(ThemeContext);

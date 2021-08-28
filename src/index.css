@@ -26,23 +26,18 @@ select {
   appearance: none;
 }
 
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* General styles */
 
 #root {
   width: 100%;
   height: 100%;
 }
-
-/* Import components */
-/* Header */
-@import url("./components/header/header.css");
-
-/* Home page */
-@import url("./components/pages/home/home.css");
-@import url("./components/pages/home/utils/utils.css");
-@import url("./components/pages/home/utils/select-dropdown/select-dropdown.css");
-@import url("./components/pages/home/country-item/country-item.css");
-@import url("./components/pages/home/utils/loader/loader.css");
-
-/* Details page */
-@import url("./components/pages/details/details.css");

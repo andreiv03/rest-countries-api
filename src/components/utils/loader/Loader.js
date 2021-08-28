@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import "./loader.css";
+
 const container = {
   animate: {
     transition: {
@@ -31,12 +33,14 @@ export default function Loader({ theme, themes }) {
       initial="initial"
       animate="animate"
     >
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(index => (
-        <motion.div key={index} className="loader__block"
-          variants={block}
-          style={{ background: themes[theme].foreground }}
-        />
-      ))}
+      {
+        [0, 1, 2, 3, 4, 5, 6, 7, 8].map(index => (
+          <motion.div key={index} className="loader__block"
+            variants={block}
+            style={{ background: themes[theme].foreground }}
+          />
+        ))
+      }
     </motion.div>
   );
 }

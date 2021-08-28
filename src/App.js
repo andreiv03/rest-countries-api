@@ -5,7 +5,7 @@ import { ThemeContextProvider } from "./contexts/ThemeContext.js";
 import { CountriesContextProvider } from "./contexts/CountriesContext.js";
 
 import Header from "./components/header/Header.js";
-import Pages from "./components/pages/Pages.js";
+import Pages from "./pages/Pages.js";
 
 export default function App() {
   return (
