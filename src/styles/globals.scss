@@ -1,0 +1,48 @@
+:root {
+  --background-primary: #ffffff;
+  --background-secondary: #fafafa;
+  --foreground-primary: #111517;
+  --box-shadow: rgb(150 150 150 / 10%) 0px 1px 5px 3px;
+
+  [data-theme="dark"] {
+    --background-primary: #2b3945;
+    --background-secondary: #202c37;
+    --foreground-primary: #ffffff;
+    --box-shadow: rgb(0 0 0 / 10%) 0px 1px 5px 5px;
+  }
+
+  --header-height: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+input {
+  color: var(--foreground-primary);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Nunito Sans
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
