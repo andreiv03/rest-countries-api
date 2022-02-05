@@ -1,19 +1,14 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import "../styles/globals.scss";
-import styles from "../styles/components/layout.module.scss";
 const Header = dynamic(() => import("../components/header"));
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [theme, setTheme] = useState("light");
-  
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  }
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -23,11 +18,28 @@ const App = ({ Component, pageProps }: AppProps) => {
     if (isDefaultDark) setTheme("dark");
   }, []);
 
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+  }
+
   return (
-    <div className={styles.layout} data-theme={theme}>
-      <Header theme={theme} switchTheme={switchTheme} />
-      <Component {...pageProps} />
-    </div>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>REST Countries API</title>
+      </Head>
+      
+      <HelmetProvider>
+        <Helmet>
+          <body data-theme={theme}/>
+        </Helmet>
+
+        <Header theme={theme} switchTheme={switchTheme} />
+        <Component {...pageProps} />
+      </HelmetProvider>
+    </>
   );
 }
 
