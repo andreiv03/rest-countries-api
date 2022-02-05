@@ -1,11 +1,11 @@
 .select_input {
   position: relative;
   z-index: 1;
-  width: 200px;
+  width: min(200px, 100%);
   border-radius: 0.25rem;
   background: var(--background-primary);
   box-shadow: var(--box-shadow);
-  color: var(--foreground-primary);
+  color: var(--foreground);
   cursor: pointer;
 
   .button {
@@ -19,8 +19,6 @@
       right: 1.5rem;
       transform: translateY(-50%);
       font-size: 1.5rem;
-      display: flex;
-      align-items: center;
     }
   }
 

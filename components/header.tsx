@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { RiMoonFill, RiSunFill } from "react-icons/ri";
 
 import styles from "../styles/components/header.module.scss";
@@ -12,12 +12,12 @@ const Header: React.FC<PropsInterface> = ({ theme, switchTheme }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link to="/">Where in the world?</Link>
+        <Link href="/">Where in the world?</Link>
       </div>
 
       <div className={styles.button} onClick={switchTheme}>
         {theme === "light" ? <RiSunFill /> : <RiMoonFill />}
-        <span>{theme === "light" ? "Light Mode" : "Dark Mode"}</span>   
+        <span>{theme === "light" ? "Light Mode" : "Dark Mode"}</span>
       </div>
     </header>
   );

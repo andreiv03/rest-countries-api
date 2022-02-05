@@ -11,10 +11,10 @@
       border-radius: 0.25rem;
       background: var(--background-primary);
       box-shadow: var(--box-shadow);
-      color: var(--foreground-primary);
+      color: var(--foreground);
 
       ::placeholder {
-        color: var(--foreground-primary);
+        color: var(--foreground);
       }
 
       input {
@@ -27,17 +27,15 @@
       svg {
         position: absolute;
         top: 50%;
-        left: 1.3rem;
+        left: 1.35rem;
         transform: translateY(-50%);
-        display: flex;
-        align-items: center;
         pointer-events: none;
       }
     }
   }
 
   .countries {
-    margin-top: 3rem;
+    margin-top: 4rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -49,6 +47,7 @@
   }
 }
 
+// Media Queries
 @media screen and (max-width: 1024px) {
   .page {
     padding: 2rem;

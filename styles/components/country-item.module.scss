@@ -1,14 +1,19 @@
 .country_item {
   width: 250px;
+  height: fit-content;
   border-radius: 0.25rem;
   background: var(--background-primary);
   box-shadow: var(--box-shadow);
-  color: var(--foreground-primary);
-  display: flex;
-  flex-direction: column;
+  color: var(--foreground);
   cursor: pointer;
+  transition: transform 150ms ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .image {
+    position: relative;
     height: 150px;
 
     img {
@@ -25,7 +30,7 @@
     h2 {
       font-size: 1rem;
       font-weight: 800;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     h3 {
