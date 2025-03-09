@@ -1,0 +1,44 @@
+.filters {
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+
+	.search {
+		position: relative;
+		width: min(400px, 100%);
+		border-radius: 0.25rem;
+		background: var(--background-primary);
+		box-shadow: var(--box-shadow);
+		color: var(--foreground);
+
+		::placeholder {
+			color: var(--foreground);
+		}
+
+		input {
+			width: 100%;
+			padding: 1rem 1.5rem 1rem 3.5rem;
+			font-size: 0.8rem;
+			font-weight: 600;
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 1.35rem;
+			transform: translateY(-50%);
+			pointer-events: none;
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.filters {
+		flex-direction: column;
+		gap: 2rem;
+
+		.search {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+.select_input {
+	position: relative;
+	z-index: 1;
+	width: min(200px, 100%);
+	border-radius: 0.25rem;
+	background: var(--background-primary);
+	box-shadow: var(--box-shadow);
+	color: var(--foreground);
+	cursor: pointer;
+
+	button {
+		padding: 1rem 1.5rem;
+		font-size: 0.8rem;
+		font-weight: 600;
+		cursor: pointer;
+
+		svg {
+			position: absolute;
+			top: 50%;
+			right: 1rem;
+			transform: translateY(-50%);
+			font-size: 1.5rem;
+		}
+	}
+
+	.options {
+		position: absolute;
+		width: 100%;
+		margin-top: 0.5rem;
+		border-radius: 0.25rem;
+		background: var(--background-primary);
+		box-shadow: var(--box-shadow);
+		overflow: hidden;
+
+		.option {
+			padding: 0.5rem 1.5rem;
+			font-size: 0.8rem;
+			font-weight: 600;
+			cursor: pointer;
+
+			&:first-child {
+				margin-top: 0.5rem;
+			}
+
+			&:last-child {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
