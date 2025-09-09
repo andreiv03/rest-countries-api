@@ -3,9 +3,11 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"build": "next build",
+		"build": "GH_PAGES=true NEXT_PUBLIC_BASE_PATH=/rest-countries-api next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "eslint",
+		"predeploy": "npm run build && echo > out/.nojekyll",
+		"deploy": "gh-pages -d out -t"
 	},
 	"dependencies": {
 		"framer-motion": "^12.4.10",
@@ -21,6 +23,7 @@
 		"@types/react-dom": "^19",
 		"eslint": "^9",
 		"eslint-config-next": "^15.2.1",
+		"gh-pages": "^6.3.0",
 		"sass": "^1.85.1",
 		"typescript": "^5"
 	}

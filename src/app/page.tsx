@@ -1,10 +1,13 @@
 import type { Country } from "@/types/country";
+
 import CountryList from "@/components/country-list";
 
+export const dynamic = "force-static";
+
 async function fetchCountries(): Promise<Country[]> {
-	const response = await fetch("https://restcountries.com/v3.1/all", {
+	const fields = ["capital", "flags", "name", "population", "region"];
+	const response = await fetch(`https://restcountries.com/v3.1/all?fields=${fields.join(",")}`, {
 		cache: "force-cache",
-		next: { revalidate: 3600 },
 	});
 
 	if (!response.ok) {

@@ -1,12 +1,12 @@
 export interface Country {
+	capital: string[];
+	flags: {
+		png: string;
+	};
 	name: {
 		common: string;
 		official: string;
 	};
-	capital: string[];
-	region: string;
 	population: number;
-	flags: {
-		png: string;
-	};
+	region: string;
 }

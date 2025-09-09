@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
 import styles from "@/styles/components/loading.module.scss";
 
 export default function Loading() {
