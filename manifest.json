@@ -1,0 +1,9 @@
+{
+	"short_name": "rest-countries-api",
+	"name": "REST Countries API",
+	"icons": [],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
